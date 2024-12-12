@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptune Facts</title>
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4fb5ff;
+            margin-bottom: 30px;
+        }
+
+        #fact-container {
+            background-color: #2a2a4e;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: #4fb5ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3a8ac7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fascinating Neptune Facts</h1>
+        <div id="fact-container">
+            <p id="fact-text">Click the button to learn a fact about Neptune!</p>
+        </div>
+        <button id="next-fact">Next Fact</button>
+    </div>
+
+    <script>
+        const neptuneFacts = [
+            "Neptune is the 8th and most distant planet from the Sun in our solar system.",
+            "It was the first planet located through mathematical predictions rather than direct observation.",
+            "Neptune was discovered on September 23, 1846, by Johann Gottfried Galle.",
+            "It's the fourth-largest planet by diameter and the third-most massive planet.",
+            "Neptune is named after the Roman god of the sea.",
+            "The planet completes one orbit around the Sun every 165 years.",
+            "Neptune's atmosphere contains the fastest winds in the solar system, reaching speeds up to 1,200 mph.",
+            "It has 14 known moons, with Triton being the largest.",
+            "Triton is unique because it orbits Neptune backwards (retrograde orbit).",
+            "Neptune's blue color comes from methane in its atmosphere.",
+            "One day on Neptune lasts about 16 Earth hours.",
+            "The planet has a Great Dark Spot, similar to Jupiter's Great Red Spot.",
+            "Neptune is considered an ice giant because of its composition.",
+            "It's so cold on Neptune that temperatures can drop to -214°C (-353°F).",
+            "Despite being so far from the Sun, Neptune radiates more energy than it receives.",
+            "You would weigh about 14% more on Neptune than on Earth due to its gravity.",
+            "Neptune has a set of rings, although they're much fainter than Saturn's.",
+            "The planet is about 17 times the mass of Earth.",
+            "It's so far away that light from the Sun takes over 4 hours to reach Neptune.",
+            "The Voyager 2 spacecraft is the only human-made object to have visited Neptune (in 1989)."
+        ];
+
+        let currentFactIndex = -1;
+
+        document.getElementById('next-fact').addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % neptuneFacts.length;
+            document.getElementById('fact-text').textContent = neptuneFacts[currentFactIndex];
+        });
+
+        window.addEventListener('load', () => {
+            currentFactIndex = Math.floor(Math.random() * neptuneFacts.length);
+            document.getElementById('fact-text').textContent = neptuneFacts[currentFactIndex];
+        });
+    </script>
+</body>
+</html>
